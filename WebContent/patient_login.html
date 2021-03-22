@@ -1,10 +1,283 @@
 <!DOCTYPE html>
 <html>
 <head>
+
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="title icon" href="images/logo5.jpeg">
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+	integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+	crossorigin="anonymous">
+<script defer
+	src="https://use.fontawesome.com/releases/v5.0.13/js/all.js"
+	integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe"
+	crossorigin="anonymous"></script>
+<link href="https://fonts.googleapis.com/css?family=Montserrat"
+	rel="stylesheet">
+<link rel="stylesheet" href="css/cdbstyle.css">
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"
+	integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+	crossorigin="anonymous"></script>
+
+
+<link
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+	rel="stylesheet">
+</link>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+
+
+
+<title>Admin HMS</title>
+
+
+
+
+<style>
+* {
+	box-sizing: border-box;
+}
+
+#myInput {
+	background-image: url('/css/searchicon.png');
+	background-position: 10px 10px;
+	background-repeat: no-repeat;
+	width: 100%;
+	font-size: 16px;
+	padding: 12px 20px 12px 40px;
+	border: 1px solid #ddd;
+	margin-bottom: 12px;
+}
+
+#To {
+	background-image: url('/css/searchicon.png');
+	background-position: 10px 10px;
+	background-repeat: no-repeat;
+	width: 100%;
+	font-size: 16px;
+	padding: 12px 20px 12px 40px;
+	border: 1px solid #ddd;
+	margin-bottom: 12px;
+}
+
+#myTable, #passengerTable, #busReportTable, #driverTable,
+	#conductorTable, #tableBusCompanyRequests, #busTableDisplay,
+	#busReportTable, #busReviewTables {
+	border-collapse: collapse;
+	width: 100%;
+	border: 1px solid #ddd;
+	font-size: 18px;
+}
+
+/* #passengerTable {
+      border-collapse: collapse;
+      width: 100%;
+      border: 1px solid #ddd;
+      font-size: 18px;
+    } */
+#myTable th, #myTable td {
+	text-align: left;
+	padding: 12px;
+}
+
+#myTable tr {
+	border-bottom: 1px solid #ddd;
+}
+
+#myTable tr.header, #myTable tr:hover {
+	background-color: #f1f1f1;
+}
+
+.row:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.column {
+	float: left;
+	width: 50%;
+	padding: 10px;
+	height: 400px;
+}
+
+td:nth-of-type(1) {
+	display: none;
+}
+
+th:nth-of-type(1) {
+	display: none;
+}
+</style>
+
 </head>
 <body>
+	
+  <div id="manage-bookings" class="w3-container city" style="display:none">
+    <section>
+      <div class="container-fluid" style="margin-top: 60px;">
+        <div class="row">
 
+          <div class="col-xl-10 col-lg-9 col-md-8 ml-auto">
+
+            <div id="accordion">
+              <div class="card">
+                <div class="card-header" id="headingOne">
+                  <h5 class="mb-0">
+                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false"
+                      aria-controls="collapseOne">
+                      Bookings
+                    </button>
+                  </h5>
+                </div>
+
+                <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                  <div class="card-body">
+
+                    <div class="form-group">
+                      <label for="exampleInputEmail1" id="salw">Mobile No</label>
+                      <input type="text" class="form-control" id="mobileKeynew"
+                        placeholder="Enter Passenger Mobile Number">
+                      <br>
+                      <button type="button" class="btn btn-secondary" id="submitbooking"
+                        onclick="showbookings()">Search</button>
+                    </div>
+
+                    <table border="1">
+
+                      <thead>
+                        <tr class="header">
+                          <th>Book Id</th>
+                          <th>Passenger No</th>
+                          <th>Booked Date</th>
+                          <th>Date</th>
+                          <th>Ride No</th>
+                          <th>Time Slot</th>
+                          <th>Time</th>
+                          <th>Arr Time</th>
+                          <th>Dep TIme</th>
+                          <th>From</th>
+                          <th>To</th>
+                          <th>Name</th>
+                          <th>Payment Id</th>
+                          <th>Amount</th>
+                          <th>Paymenet Note</th>
+                          <th>State</th>
+                        </tr>
+                      </thead>
+                      <tbody id="list-table-booking-ind"></tbody>
+                      <tbody>
+
+                      </tbody>
+
+                    </table>
+
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header" id="headingThree">
+                  <h5 class="mb-0">
+                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree"
+                      aria-expanded="true" aria-controls="collapseThree">
+                      CURRENT BUS ROUTES
+                    </button>
+                  </h5>
+                </div>
+                <div id="collapseThree" class="collapse show" aria-labelledby="headingThree" data-parent="#accordion">
+                  <div class="card-body">
+
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">From</label>
+                      <input type="text" class="form-control" id="bookingFromSearch" placeholder="From" onkeyup="bookingFromSearch()">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputPassword1">To</label>
+                      <input type="text" class="form-control" id="bookingToSearch" onkeyup="bookingToSearch()" placeholder="To"
+                        title="To">
+                    </div>
+
+                    <table border="1" id="tableBusBooking">
+
+                      <thead>
+                        <tr class="header">
+                          <th>Book Id</th>
+                          <th>Passenger No</th>
+                          <th>Booked Date</th>
+                          <th>Date</th>
+                          <th>Ride No</th>
+                          <th>Time Slot</th>
+                          <th>Time</th>
+                          <th>Arr Time</th>
+                          <th>Dep TIme</th>
+                          <th>From</th>
+                          <th>To</th>
+                          <th>Name</th>
+                          <th>Payment Id</th>
+                          <th>Amount</th>
+                          <th>Paymenet Note</th>
+                          <th>State</th>
+                        </tr>
+                      </thead>
+                      <tbody id="list-table-booking"></tbody>
+                      <tbody>
+
+                      </tbody>
+
+                    </table>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- modal to delete -->
+            <div class="modal fade" id="delete-out">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h4 class="modal-title">Delete a Time Slot</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  </div>
+                  <div class="modal-body">
+                    Are you sure ?
+                    <form id="deleteform">
+
+                      <div class="form-row">
+                        <div class="form-group col-md-6">
+                          <input type="hidden" class="form-control" id="deltekeys" />
+                        </div>
+                    </form>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-danger" id="delbtn" onclick="deleteBusTimeSlot()"
+                      data-dismiss="modal" 2>Delete</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <script src="/js/database.js"></script>
+            <script src="/js/busBoookings.js"></script>
+
+          </div>
+          <!-- </div> -->
+        </div>
+      </div>
+
+    </section>
+  </div>
 </body>
 </html>
