@@ -41,6 +41,21 @@ public class TimeSlot {
 		this.aptEffectiveDate = aptEffectiveDate;
 		this.aptEndDate = aptEndDate;
 	}
+	
+	
+
+	public TimeSlot(String empName, String enterType, String doctorFee, String startTime, String endTime,
+			String aptEffectiveDate, String aptEndDate) {
+		super();
+		this.empName = empName;
+		this.enterType = enterType;
+		this.doctorFee = doctorFee;
+		this.startTime = startTime;
+		this.endTime = endTime;
+		this.aptEffectiveDate = aptEffectiveDate;
+		this.aptEndDate = aptEndDate;
+	}
+
 
 	public TimeSlot() {
 		super();

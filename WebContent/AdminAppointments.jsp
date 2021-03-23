@@ -10,6 +10,8 @@
 </head>
 <body>
 	<%@include file="navBar.jsp"%>
+	
+	
 	<div class="accordion" id="accordionExample">
 		<div class="card">
 			<div class="card-header" id="headingOne">

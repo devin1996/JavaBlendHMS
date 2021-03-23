@@ -54,7 +54,7 @@ i {
 		setTimeout(
 				function() {
 					window.location.href = 'AdminHome.jsp';
-				}, 5000);
+				}, 3000);
 	</script>
 	<div class="card">
 		<div
